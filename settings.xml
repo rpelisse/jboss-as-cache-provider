@@ -1,0 +1,50 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+  <localRepository>${env.PATH_TO_REPO}</localRepository>
+  <offline>false</offline>
+
+  <profiles>
+
+    <profile>
+      <id>wfk-repository</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <repositories>
+         <repository>
+            <id>jboss-wfk-repository</id>
+            <url>file://${env.PATH_TO_WFK_HOME}/maven-repository</url>
+         </repository>
+      </repositories>
+    </profile>
+    <profile>
+      <id>wfk-repository-compile</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <repositories>
+         <repository>
+            <id>jboss-wfk-repository-compile</id>
+            <url>file://${env.PATH_TO_WFK_HOME}/maven-repository-compilation</url>
+         </repository>
+      </repositories>
+  </profile>
+
+    <profile>
+      <id>maven-central</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <repositories>
+         <repository>
+            <id>maven-central</id>
+            <url>http://repo1.maven.org/maven2</url>
+         </repository>
+      </repositories>
+    </profile>
+
+  </profiles>
+</settings>

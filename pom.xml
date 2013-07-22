@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.jboss.seam</groupId>
+	<artifactId>jboss-as-cache-provider</artifactId>
+	<packaging>jar</packaging>
+	<name>JBoss AS 7 Cache Provider</name>
+    <version>1.0-SNAPSHOT</version>
+
+    <description><![CDATA[
+A simple Seam Cache Provider integration offering access to a local or distributed cache, configured
+within JBoss AS 7 (or +), and therefore using InfiniSpan. This mostly aims at removing the need for
+a application specific 'infinispan.xml', and move the configuration to the server.
+    ]]></description>
+    <url></url>
+    <inceptionYear>2013</inceptionYear>
+    <licenses>
+        <license>
+            <name>BSD-style</name>
+            <url>TODO</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>rpelisse</id>
+            <name>Romain Pelisse</name>
+            <email>rpelisse@users.sourceforge.net</email>
+            <url>http://belaran.eu/</url>
+            <organization>Atos Origin</organization>
+            <organizationUrl>https://osc-service.si.fr.atosorigin.com/</organizationUrl>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <timezone>+1</timezone>
+            <properties>
+                <picUrl>http://belaran.eu/wordpress/wp-content/uploads/2008/05/RomainPELISSE.jpg</picUrl>
+            </properties>
+        </developer>
+    </developers>
+    <!--scm> TODO
+        <connection>scm:git:git://github.com/pmd/pmd.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/pmd/pmd.git</developerConnection>
+        <url>https://github.com/pmd/pmd</url>
+    </scm-->
+    <organization>
+        <name>Red Hat</name>
+        <url>http://redhat.com/</url>
+    </organization>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <seam.version>2.3.1.Final-redhat-1</seam.version>
+        <infinispan.version>5.1.8.Final-redhat-1</infinispan.version>
+    </properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.jboss.seam</groupId>
+			<artifactId>jboss-seam-ioc</artifactId>
+			<version>${seam.version}</version>
+            <scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.seam</groupId>
+			<artifactId>jboss-seam-debug</artifactId>
+			<version>${seam.version}</version>
+            <scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.seam</groupId>
+			<artifactId>jboss-seam</artifactId>
+			<version>${seam.version}</version>
+			<scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.infinispan</groupId>
+            <artifactId>infinispan-core</artifactId>
+            <version>${infinispan.version}</version>
+            <scope>compile</scope>
+       </dependency>
+    </dependencies>
+</project>
